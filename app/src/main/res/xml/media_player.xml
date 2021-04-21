@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        motion:constraintSetStart="@+id/normal"
+        motion:constraintSetEnd="@+id/minimized"
+        motion:duration="1000">
+        <OnSwipe
+            motion:touchAnchorId="@+id/left_box"
+            motion:touchAnchorSide="right"
+            motion:dragDirection="dragRight"/>
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:framePosition="70"
+                motion:motionTarget="@id/player_album"
+                android:alpha="0.0"/>
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/player_album"
+                android:alpha="1.0"/>
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/normal">
+        <Constraint
+            android:id="@id/left_box"
+            android:layout_width="50dp"
+            android:layout_height="@dimen/media_normal_height"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toStartOf="@id/right_box"
+            motion:layout_constraintBottom_toBottomOf="parent"/>
+        <Constraint
+            android:id="@id/right_box"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/media_normal_height"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toEndOf="@id/left_box"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"/>
+        <Constraint android:id="@id/player_album"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            motion:layout_constraintTop_toTopOf="@id/right_box"
+            motion:layout_constraintStart_toStartOf="@id/right_box"
+            motion:layout_constraintEnd_toEndOf="@id/right_box"
+            motion:visibilityMode="ignore"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/minimized">
+        <Constraint
+            android:id="@id/left_box"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/media_normal_height"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toStartOf="@id/right_box"
+            motion:layout_constraintBottom_toBottomOf="parent"/>
+        <Constraint
+            android:id="@id/right_box"
+            android:layout_width="50dp"
+            android:layout_height="@dimen/media_normal_height"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toEndOf="@id/left_box"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"/>
+        <Constraint android:id="@id/player_album"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            motion:layout_constraintTop_toTopOf="@id/right_box"
+            motion:layout_constraintStart_toStartOf="@id/right_box"
+            motion:layout_constraintEnd_toEndOf="@id/right_box"
+            motion:visibilityMode="ignore"/>
+    </ConstraintSet>
+
+</MotionScene>
