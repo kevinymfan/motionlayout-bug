@@ -48,6 +48,7 @@
             motion:layout_constraintTop_toTopOf="@id/right_box"
             motion:layout_constraintStart_toStartOf="@id/right_box"
             motion:layout_constraintEnd_toEndOf="@id/right_box"
+            android:alpha="1.0"
             motion:visibilityMode="ignore"/>
     </ConstraintSet>
 
@@ -78,6 +79,7 @@
             motion:layout_constraintTop_toTopOf="@id/right_box"
             motion:layout_constraintStart_toStartOf="@id/right_box"
             motion:layout_constraintEnd_toEndOf="@id/right_box"
+            android:alpha="0.0"
             motion:visibilityMode="ignore"/>
     </ConstraintSet>
 

@@ -26,12 +26,6 @@ public class MediaPlayerTileRenderer {
         if (isMinimized) {
             newLayout = (ViewGroup) LayoutInflater.from(context).inflate(R.layout.media_player_minimized, null);
             fade.setMode(Fade.MODE_OUT);
-//            changeBounds.excludeTarget(R.id.album_art, true);
-//            changeBounds.excludeTarget(R.id.left_control, true);
-//            changeBounds.excludeTarget(R.id.mid_control, true);
-//            changeBounds.excludeTarget(R.id.right_control, true);
-//            transition.setOrdering(TransitionSet.ORDERING_SEQUENTIAL);
-//            transition = (TransitionSet) TransitionInflater.from(context).inflateTransition(R.transition.exit);
             if (isExpanded) {
                 newLayout.findViewById(R.id.space).getLayoutParams().height = context.getResources().getDimensionPixelSize(R.dimen.media_expanded_height);
             }
